@@ -48,8 +48,6 @@ The number of inpatient visits were a significant factor in determining readmiss
 
 ## Summary
 
-
-
 ## Future Steps
 
 
