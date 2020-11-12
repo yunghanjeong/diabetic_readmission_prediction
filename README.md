@@ -74,5 +74,5 @@ Care providers can utilize the random forest model to predict future readmission
     |    ├── data_preparation.ipynb             # data clean and feature engineering
     |    ├── diabetes_readmission_model.ipynb   # model building and tuning
     |    ├── diabetes_readmission_eda.ipynb     # EDA and visulization
-    ├── final.ipynb                             # EDA and visulization
+    ├── diabetes_readmission_prediction.ipynb   # EDA and visulization
     └── README.md
