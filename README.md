@@ -50,7 +50,7 @@ The number of inpatient visits were a significant factor in determining readmiss
 
 ![recall_score](https://github.com/yunghanjeong/diabetic_readmission_prediction/blob/main/image/recall_score_model.png?raw=true)
 
-Decision Tree and Random Forest models were selected for modeling for their out of the box performance and heavy presence of categorical data. Both models were hypertuned with grid search cross validation method, which increase model performance and decreased overfitting. Recall metric was selected as scoring method to reduce false positives, because it is better for care providers to be over prepared than caught unawares. d
+Decision Tree and Random Forest models were selected for modeling for their out of the box performance and heavy presence of categorical data. Both models were hypertuned with grid search cross validation method, which increase model performance and decreased overfitting. Recall metric was selected as scoring method to reduce false negatives, because it is better for care providers to be over prepared than caught unawares. d
 
 The Decision Tree model was hypertuned second time with only features with significant importance (Decision Tree - SF) from the first hypertuning. This model saw great improvements in performance compared to the first model. 
 
