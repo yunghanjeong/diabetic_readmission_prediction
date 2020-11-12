@@ -78,6 +78,15 @@ class clean():
         # create dummy columns for diagnosis bins
         df = self.create_dummy_diagnosis(df)
         
+        # update predictant to numeric
+        df.readmitted = df.readmitted.apply(lambda x: 0 if x == "NO" else 1 if x == "<30" else 2)
+        
+        # update change color to numeric
+        df.change = df.change.apply(lambda x: 0 if x == "No" else 1)
+        
+        # update diabetesMed to numeric
+        df.diabetesMed = df.diabetesMed.apply(lambda x: 0 if x == "No" else 1)
+        
         return df
         
     # Input: Dataframe
