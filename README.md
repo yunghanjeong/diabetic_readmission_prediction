@@ -56,6 +56,10 @@ The Decision Tree model was hypertuned second time with only features with signi
 
 Random Forest model performed best overall and was selected as the recommended model for care provider usage. 
 
+![confusion_matrix](https://github.com/yunghanjeong/diabetic_readmission_prediction/blob/main/image/rf_confusion_matrix.png?raw=true)
+
+The random forest model predicted each class proportionally to their class presence. The greatest error was predicting ">30" class as "not readmitted" class. 
+
 ## Summary
 Care providers can utilize the random forest model to predict future readmission possibility of a patient. This will allow the hosptials to idenify high risk patients and predict readmission patient count to plan treatment and logistic necessities accordingly. All features indentified in EDA process were ranked high in feature importance of all models. Number of inpatients visits, diagnoses, and medication were among the highest in all models. It is recommeded that care providers also utilize these metrics in determining patient care. 
 
