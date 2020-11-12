@@ -46,10 +46,20 @@ The number of inpatient visits were a significant factor in determining readmiss
 
 ## Model Evaluation
 
+![recall_score](https://github.com/yunghanjeong/diabetic_readmission_prediction/blob/main/image/recall_score_model.png?raw=true)
+
+Decision Tree and Random Forest models were selected for modeling for their out of the box performance and heavy presence of categorical data. Both models were hypertuned with grid search cross validation method, which increase model performance and decreased overfitting. Recall metric was selected as scoring method to reduce false positives, because it is better for care providers to be over prepared than caught unawares. d
+
+The Decision Tree model was hypertuned second time with only features with significant importance (Decision Tree - SF) from the first hypertuning. This model saw great improvements in performance compared to the first model. 
+
+Random Forest model performed best overall and was selected as the recommended model for care provider usage. 
+
 ## Summary
+Care providers can utilize the random forest model to predict future readmission possibility of a patient. This will allow the hosptials to idenify high risk patients and predict readmission patient count to plan treatment and logistic necessities accordingly. All features indentified in EDA process were ranked high in feature importance of all models. Number of inpatients visits, diagnoses, and medication were among the highest in all models. It is recommeded that care providers also utilize these metrics in determining patient care. 
 
 ## Future Steps
-
+- Create more interpretable models to aid treatment process for care providers. 
+- Obtain more recent data and check for relevant performance. 
 
 
 ## Repository Structure
