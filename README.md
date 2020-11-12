@@ -3,6 +3,8 @@
 [Yung Han Jeong](https://github.com/yunghanjeong)<br>
 [Malcolm Katzenbach](https://github.com/malcolm206)<br>
 
+![diabetes](https://images.unsplash.com/photo-1463367620918-d4824d05ce0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80)
+
 ## Overview
 This project will create classification models to predict hospital readmissions regarding patients with diabetes through data provided by Virginia Commonwealth University (downloaded from [kaggle](https://www.kaggle.com/brandao/diabetes)) from 1999-2008 with 130 U.S. hospitals. Predicting high risk patients will provide valuable information to the careproviders to better prepare future care needs of diabetic patients. 
 
