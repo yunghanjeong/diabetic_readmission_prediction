@@ -1,14 +1,11 @@
 import os
 import pandas as pd
-import matplotlib.pyplot as plt
 pd.set_option('display.max_columns', 200) #set to show all columns
 pd.set_option('display.max_rows', 200) 
 import numpy as np
 
-%matplotlib inline
 
-# Load dataset
-df = pd.read_csv("../data/diabetic_data.csv")
+
 
 def create_dummy_columns(columns, dataframe):
     for column in columns:
@@ -29,7 +26,7 @@ def create_dummy_drugs(columns, dataframe):
         dataframe.drop(columns=drug_column, inplace = True)
     return dataframe
 
-def create_dummy_bloodtest(columns, dataframe):
+def create_dummy_bloodtests(columns, dataframe):
     for blood_test in columns:
         dummies = pd.get_dummies(dataframe[blood_test],  prefix=blood_test)
         column_name = "_".join([blood_test, "None"])
@@ -39,6 +36,21 @@ def create_dummy_bloodtest(columns, dataframe):
     return dataframe
 
 def diagnosis_clean(value):
+    # get all diabetest diagnosis
+    diab_diag_1 = list(dataframe.diag_1.apply(lambda x: x if x[:3]=="250" else np.nan).dropna().unique())
+    diab_diag_2 = list(dataframe.diag_2.apply(lambda x: x if x[:3]=="250" else np.nan).dropna().unique())
+    diab_diag_3 = list(dataframe.diag_3.apply(lambda x: x if x[:3]=="250" else np.nan).dropna().unique())
+    
+    # get string value of all diagnosis code
+    circulatory_list = [str(code) for code in range(390, 460, 1)] + ["785"]
+    respiratory_list = [str(code) for code in range(460, 520, 1)] + ["786"]
+    digestive_list = [str(code) for code in range(520, 580, 1)] + ["787"]
+    diabetes_list = set(diab_diag_1 + diab_diag_2 + diab_diag_3)
+    injury_list = [str(code) for code in range(800, 1000, 1)]
+    muscle_list = [str(code) for code in range(710, 740, 1)]
+    genit_list = [str(code) for code in range(580, 629, 1)] + ["788"]
+    neo_list = [str(code) for code in range(140, 240, 1)]
+    
     # input: diagnosis code
     # output: diagnosis group based on code in the pdf
     if value in circulatory_list:
@@ -60,22 +72,7 @@ def diagnosis_clean(value):
     else:
         return "other"
 
-def diagnosis_binning(dataframe):
-    # get all diabetest diagnosis
-    diab_diag_1 = list(df.diag_1.apply(lambda x: x if x[:3]=="250" else np.nan).dropna().unique())
-    diab_diag_2 = list(df.diag_2.apply(lambda x: x if x[:3]=="250" else np.nan).dropna().unique())
-    diab_diag_3 = list(df.diag_3.apply(lambda x: x if x[:3]=="250" else np.nan).dropna().unique())
-    
-    # get string value of all diagnosis code
-    circulatory_list = [str(code) for code in range(390, 460, 1)] + ["785"]
-    respiratory_list = [str(code) for code in range(460, 520, 1)] + ["786"]
-    digestive_list = [str(code) for code in range(520, 580, 1)] + ["787"]
-    diabetes_list = set(diab_diag_1 + diab_diag_2 + diab_diag_3)
-    injury_list = [str(code) for code in range(800, 1000, 1)]
-    muscle_list = [str(code) for code in range(710, 740, 1)]
-    genit_list = [str(code) for code in range(580, 629, 1)] + ["788"]
-    neo_list = [str(code) for code in range(140, 240, 1)]
-    
+def diagnosis_binning(dataframe):    
     # replace diagnosis code with diagnosis group 
     dataframe.diag_1 = dataframe.diag_1.apply(diagnosis_clean)
     dataframe.diag_2 = dataframe.diag_2.apply(diagnosis_clean)
@@ -93,6 +90,7 @@ def create_dummy_diagnosis(columns, dataframe):
     return dataframe
 
 def clean_data(dataframe):
+    df = dataframe
     # Drop columns with large missing values or had insignificant amount of data
     # Create list of columns needing to be dropped
     bad_columns = ['encounter_id', 'patient_nbr', 'payer_code', 'weight', 
