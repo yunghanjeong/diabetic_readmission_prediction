@@ -35,7 +35,7 @@ def create_dummy_bloodtests(columns, dataframe):
         dataframe.drop(columns=blood_test, inplace = True)
     return dataframe
 
-def diagnosis_clean(value):
+def diagnosis_clean(value, dataframe):
     # get all diabetest diagnosis
     diab_diag_1 = list(dataframe.diag_1.apply(lambda x: x if x[:3]=="250" else np.nan).dropna().unique())
     diab_diag_2 = list(dataframe.diag_2.apply(lambda x: x if x[:3]=="250" else np.nan).dropna().unique())
