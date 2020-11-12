@@ -1,4 +1,4 @@
-# Prediction of Readmission of Diabetic Patients from 1999-2008
+# Readmission Prediction of Diabetic Patients
 **Authors** <br>
 [Yung Han Jeong](https://github.com/yunghanjeong)<br>
 [Malcolm Katzenbach](https://github.com/malcolm206)<br>
