@@ -70,13 +70,14 @@ Care providers can utilize the random forest model to predict future readmission
 
 ## Repository Structure
     .
-    ├── data                                    # contains all data used
-    |    ├── ICM9_reference                     # ICM9 code for reference
-    ├── image                                   # contains all visualization and local images
-    ├── model                                   # conatain all final models and feature info
-    ├── notebooks                               # contains all work notebooks
-    |    ├── data_preparation.ipynb             # data clean and feature engineering
-    |    ├── diabetes_readmission_model.ipynb   # model building and tuning
-    |    ├── diabetes_readmission_eda.ipynb     # EDA and visulization
-    ├── diabetes_readmission_prediction.ipynb   # EDA and visulization
+    ├── data                                                # contains all data used
+    |    ├── ICM9_reference                                 # ICM9 code for reference
+    ├── image                                               # contains all visualization and local images
+    ├── model                                               # conatain all final models and feature info
+    ├── notebooks                                           # contains all work notebooks
+    |    ├── data_preparation.ipynb                         # data clean and feature engineering
+    |    ├── diabetes_readmission_model.ipynb               # model building and tuning
+    |    ├── diabetes_readmission_eda.ipynb                 # EDA and visulization
+    ├── diabetes_readmission_prediction.ipynb               # Notebook summarizing all processes
+    ├── Diabetes Readmission Prediction Presentation.pdf    # Slide deck
     └── README.md
