@@ -74,6 +74,7 @@ Care providers can utilize the random forest model to predict future readmission
     |    ├── ICM9_reference                                 # ICM9 code for reference
     ├── image                                               # contains all visualization and local images
     ├── model                                               # conatain all final models and feature info
+    ├── source                                              # all functions used for data cleaning
     ├── notebooks                                           # contains all work notebooks
     |    ├── data_preparation.ipynb                         # data clean and feature engineering
     |    ├── diabetes_readmission_model.ipynb               # model building and tuning
